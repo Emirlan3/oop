@@ -130,7 +130,7 @@
 # # dict_car = {
 # #     'marka':
 # #     'color':
-# # }
+# # # }
 
 # class Mebel:
 #     __slots__ = ('heidht', 'width', 'color')
@@ -142,6 +142,7 @@
 
 # stol = Mebel(20, 30, 'white')
 # stol.tail = True
+# stol.tail = False
 
 # isinstance(stol, Mebel) # True
 # isinstance('string', int) # False
@@ -155,33 +156,33 @@
 # Ассосиация (Агрессия, Композиция)
 #  """
 
-class A(object):
-    b = 2 # атрибут класса
-    def __init__(self, r, t):  # атрибуты объекта (экзампляра класса)
-        self.c = r
-        self.d = t
+# class A(object):
+#     b = 2 # атрибут класса
+#     def __init__(self, r, t):  # атрибуты объекта (экзампляра класса)
+#         self.c = r
+#     nalog = 15
 
-# a = A(3, 4)
-# a.e = 5
-# print(a)
-# a1 = A(5, 6)
-# print(A.b)
+#     def __init__(self, zp, staj):
+#         self.zp = zp
+#         self.staj = staj
+
+# # print(a)
+# # a1 = A(5, 6)
+# # print(A.b)
 
 
-class Salary:
-    nalog = 15
+# class Salary:
 
-    def __init__(self, zp, staj):
-        self.zp = zp
-        self.staj = staj
+#     def sum_nalog(self):
+#         """ найти сумму уплаченного налога, за все время работы """
+#         a = self.zp * self.staj * 12 * self.nalog / 100
+#         print(a)
 
-    def sum_nalog(self):
-        """ найти сумму уплаченного налога, за все время работы """
-        a = self.zp * self.staj * 12 * self.nalog / 100
-        print(a)
+# salary_obj = Salary(10000, 2)
+# salary_obj.sum_nalog
 
-salary_obj = Salary(10000, 2)
-salary_obj.sum_nalog
+# class Car:
+#     def __int__(self,  model, year, mileg = 0, is_going = False):        self.d = t
 
-class Car:
-    def __int__(self,  model, year, mileg = 0, is_going = False):
+# # a = A(3, 4)
+# # a.e = 5
