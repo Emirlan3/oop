@@ -140,21 +140,99 @@
     Дату сколько лет назад была получена премия в методе get_year() не вписывать вручную, а высчитывать используя datetime
  """
 
-import datetime 
-class Nobel(): 
-    def __init__(self, category, year, winner) -> None: 
-        self.category = category 
-        self.year = year 
-        self.winner = winner 
-    def get_year(self): 
-        a = datetime.datetime.now() 
-        res = a.year - self.year 
-        return f'Выиграл {res} лет назад' 
+# import datetime 
+# class Nobel(): 
+#     def __init__(self, category, year, winner) -> None: 
+#         self.category = category 
+#         self.year = year 
+#         self.winner = winner 
+#     def get_year(self): 
+#         a = datetime.datetime.now() 
+#         res = a.year - self.year 
+#         return f'Выиграл {res} лет назад' 
 
-winner1 = Nobel("Литература", 1971, "Пабло Неруда") 
-print(winner1.category, winner1.year, winner1.winner) 
-print(winner1.get_year()) 
-winner2 = Nobel("Литература", 1994, "Кэндзабуро Оэ") 
-print(winner2.category, winner2.year, winner2.winner) 
-print(winner2.get_year())
+# winner1 = Nobel("Литература", 1971, "Пабло Неруда") 
+# print(winner1.category, winner1.year, winner1.winner) 
+# print(winner1.get_year()) 
+# winner2 = Nobel("Литература", 1994, "Кэндзабуро Оэ") 
+# print(winner2.category, winner2.year, winner2.winner) 
+# print(winner2.get_year())
         
+
+# class ContactList(list): 
+#     def __init__(self, list_): 
+#         self.list_ = list_ 
+#     def search_by_name(self, name): 
+#         a = [] 
+#         for i in self.list_: 
+#             if name in i: 
+#                 a.append(i) 
+#         return a 
+# all_contacts = ContactList(['Ivan', 'Maris', 'Olga', 'Ivan Olya', 'Olya Ivan', 'ivan']) 
+# print(all_contacts.search_by_name('Olya')) 
+
+
+# class SmartPhones: 
+#     def __init__(self, name, color, memory): 
+#         self.name = name 
+#         self.color = color 
+#         self.memory = memory 
+#         self.battery = 0 
+#     def __str__(self): 
+#         return f"{self.name} {self.memory}" 
+#     def charge(self, number): self.battery += number 
+
+# class Iphone(SmartPhones): 
+#     def __init__(self, name, color, memory, ios): 
+#         super().__init__(name, color, memory) 
+#         self.ios = ios 
+#     def send_imessage(self, string): 
+#         return f"sending {string} from {self.name} {self.memory}" 
+
+# class Samsung(SmartPhones): 
+#     def __init__(self, name, color, memory, android): 
+#         super().__init__(name, color, memory) 
+#         self.android = android 
+#     def show_time(self): 
+#         import datetime 
+#         return datetime.datetime.now().time() 
+    
+# phone = SmartPhones('generic', 'blue', '128GB') 
+# print(phone) 
+# print(phone.battery) 
+# phone.charge(20) 
+# print(phone.battery) 
+# iphone7 = Iphone('Iphone 7', 'gold', '128gb', '12.1.3') 
+# print(iphone7) 
+# print(iphone7.send_imessage('hello')) 
+# samsung21 = Samsung('Samsung A21', 'black', '256gb', 'Oreo') 
+# print(samsung21.show_time()) """
+
+""" 
+Создайте класс Soda (для определения типа газированной воды), принимающий 1 аргумент при инициализации (отвечающий за добавку к выбираемому лимонаду). В этом классе реализуйте метод show_my_drink(), 
+выводящий на печать Газировка и {ДОБАВКА} в случае наличия добавки, а иначе отобразится следующая фраза: Обычная газировка """
+class Soda:
+    def __init__(self, drink):
+        self.drink = drink
+    def show_my_drink(self):
+        print(f'газировка и  {self.drink}')
+    
+
+
+    """ Николаю требуется проверить, возможно ли из представленных отрезков условной длины сформировать треугольник. Для этого он решил создать класс TriangleChecker, принимающий только положительные числа. С помощью метода is_triangle() возвращаются следующие значения (в зависимости от ситуации):
+– Ура, можно построить треугольник!;
+– С отрицательными числами ничего не выйдет!;
+– Нужно вводить только числа!;
+– Жаль, но из этого треугольник не сделать. """
+
+
+class TiangleChecker:
+    def __init__(self, num1, num2, num3):
+        self.num1 = num1 
+        self.num2 = num2
+        self.num3 = num3
+    def is_triangle(self):
+        if self.num1 or self.num2 or self.num3:
+            print()
+        else:
+            

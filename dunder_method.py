@@ -214,84 +214,139 @@ del p.x
 # """ Композиция  """
 
 
-class Battery:
-    _power = 100
+# class Battery:
+#     _power = 100
 
-    def charge(self):
-        if self._power < 100:
-            self._power = 100
+#     def charge(self):
+#         if self._power < 100:
+#             self._power = 100
 
-class Iphone:
-    def __init__(self, color, storage):
-        self.color = color
-        self.storage = storage
-        self.battery = Battery()
+# class Iphone:
+#     def __init__(self, color, storage):
+#         self.color = color
+#         self.storage = storage
+#         self.battery = Battery()
 
 
-class Nokia:
-    def __init__(self, battery: Battery, color: str = 'синий'):
-        self.battery = battery
-        self.color = color
-        self.storage = 8
+# class Nokia:
+#     def __init__(self, battery: Battery, color: str = 'синий'):
+#         self.battery = battery
+#         self.color = color
+#         self.storage = 8
 
-battery = Battery()
-i = Iphone('purple', 512)
-nokia = Nokia(battery)
+# battery = Battery()
+# i = Iphone('purple', 512)
+# nokia = Nokia(battery)
 
-i.battery._power = 50
-i.battery.charge()
-print(i.battery._power)
+# i.battery._power = 50
+# i.battery.charge()
+# print(i.battery._power)
 
-class Employe:
-    def __init__(self, name, last_name,):
-        self.name = name
-        self.last_name = last_name
+# class Employe:
+#     def __init__(self, name, last_name,):
+#         self.name = name
+#         self.last_name = last_name
     
-    def lecture(self):
-        print('Провожу лекцию группе')
-    def interactive(self):
-            print('Провожу интерактив группе')
+#     def lecture(self):
+#         print('Провожу лекцию группе')
+#     def interactive(self):
+#             print('Провожу интерактив группе')
 
 
-class Student:
-    def __init__(self, name, last_name, age, kpi):
+# class Student:
+#     def __init__(self, name, last_name, age, kpi):
+#         self.name = name
+#         self.last_name = last_name
+#         self.age = age
+#         self.kpi = 0
+#     def study(self):
+#         print('просматриваю видео лекцию')
+#     def do_tastks(self):
+#         print('Решаем таски')
+
+
+#         self.kpi += 10
+#     def pass_test(self):
+#         self.kpi += 15
+
+# class Group:
+#     def __init__(self, name, count_students):
+#         self.name = name
+#         self.count_students = count_students
+#         self.curator = Employe('Aigerim', 'Taalaybekova')
+# junPYback = Group('junPYback', 17)
+# pitHUB = Group('pitHUB', 15)
+# class CaBinet:
+#     def __init__(self, number, seats, group1, group2 = None):
+#         self.number = number
+#         self.seats = seats
+#         self.group = [group1, group2]
+
+
+# cab_9 = CaBinet(9, 35, junPYback, pitHUB)
+# print(cab_9.group[0].curator.name)
+
+# class Maker:
+#     def __init__(self, cab_count: int, *employees):
+#         self.employes = [employees]
+#         self.cabinets = cab_count
+
+
+# class APL:
+#     def __init__(self, Liverpool, Manchester_city, Arsenal):
+#         self.Liverpool = Liverpool
+#         self.Machester_city = Manchester_city
+#         self.Arsenal = Arsenal
+#     def ligue(self):
+#         print(f'{self.Liverpool}, {self.Machester_city}, {self.Arsenal} это английские клубы')
+
+# a = APL('Ливерпуль', 'Манчестер сити', 'Арсенал')
+# print(a.ligue())
+              
+
+
+class ContactList(list): 
+    def __init__(self, list_): 
+        self.list_ = list_ 
+    def search_by_name(self, name): 
+        a = [] 
+        for i in self.list_: 
+            if name in i: a.append(i) 
+            return a 
+all_contacts = ContactList(['Ivan', 'Maris', 'Olga', 'Ivan Olya', 'Olya Ivan', 'ivan']) 
+print(all_contacts.search_by_name('Olya')) 
+
+
+
+
+
+class User:
+    def __new__(cls, name, age):
+        if age < 18:
+            raise ValueError(
+                "Вы слишком молоды"
+            )         
+        return object.__new__(cls)
+    
+    def __init__(self, name, age):
         self.name = name
-        self.last_name = last_name
         self.age = age
-        self.kpi = 0
-    def study(self):
-        print('просматриваю видео лекцию')
-    def do_tastks(self):
-        print('Решаем таски')
+    
+    def __str__(self):
+        return self.name
+    def __repr__(self):
+        return self.name
 
 
-        self.kpi += 10
-    def pass_test(self):
-        self.kpi += 15
-
-class Group:
-    def __init__(self, name, count_students):
+class Person:
+    def __init__(self, name, age):
         self.name = name
-        self.count_students = count_students
-        self.curator = Employe('Aigerim', 'Taalaybekova')
-junPYback = Group('junPYback', 17)
-pitHUB = Group('pitHUB', 15)
-class CaBinet:
-    def __init__(self, number, seats, group1, group2 = None):
-        self.number = number
-        self.seats = seats
-        self.group = [group1, group2]
+        self.age = age
+    def homan(self):
+        if self.age < 18:
+            raise Exception('Вы слишком молоды!')
+        else:
+            return f'Вам доступно'
 
-
-cab_9 = CaBinet(9, 35, junPYback, pitHUB)
-print(cab_9.group[0].curator.name)
-
-class Maker:
-    def __init__(self, cab_count: int, *employees):
-        self.employes = [employees]
-        self.cabinets = cab_count
-
-
-
-
-
+obj2 = ('Emirlan', '17')
+print(obj2.homan('emirlan'))
